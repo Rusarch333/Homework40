@@ -131,11 +131,30 @@ const countVowelsAmount = (str) =>
 console.log(STRING_TASK4);
 console.log("Кількість голосних у слові: ", countVowelsAmount(STRING_TASK4));
 
-// 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом.
+// 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом
 
 console.log(
   "\nЗАВДАННЯ №5 - Створіть функцію, яка перевіряє, чи є рядок паліндромом:\n"
 );
+
+const STRING_TASK5 = "Я       несу гусеня";
+
+/**
+ * Функція повертає true, якщо рядок-параметр є паліндромом
+ * @param {string} str 
+ * @returns {boolean}
+ */
+const checkIsStringPalindrome = (str) => {
+  const strLowerCaseWithoutSpaces = str.replaceAll(" ", "").toLowerCase();
+
+  return (
+    strLowerCaseWithoutSpaces ===
+    strLowerCaseWithoutSpaces.split("").reverse().join("")
+  );
+};
+
+console.log("Рядок:", STRING_TASK5);
+console.log("Рядок є паліндромом:", checkIsStringPalindrome(STRING_TASK5));
 
 // (*) - 6) Створіть функцію, яка знаходить найдовше слово у рядку і повертає його.
 
