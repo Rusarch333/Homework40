@@ -65,18 +65,10 @@ console.log(
   "\nЗАВДАННЯ №3 - Дан рядок: 'abcde abcde abcde abcde'. Замініть у ній перший символ кожного слова на '!':\n"
 );
 
-const STRING_TASK3 = "abcde abcde abcde abcde";
+const STRING_TASK3 = "abcde   abcde abcde   abcde";
 const NEW_REPLACE_STRING = "!";
 
 console.log(STRING_TASK3);
-
-// Не універсальний варіант:
-const REPLACE_FIRST_LETTER = "a";
-
-console.log(
-  "Не універсальний варіант:",
-  STRING_TASK3.replaceAll(REPLACE_FIRST_LETTER, NEW_REPLACE_STRING)
-);
 
 // Універсальний варіант:
 
@@ -89,12 +81,20 @@ console.log(
 const changeFirstWordLettersOnNewString = (str, newStr) =>
   str
     .split(" ")
-    .map((word) => newStr + word.slice(1))
+    .map((word) => (word !== "" ? newStr + word.slice(1) : word))
     .join(" ");
 
 console.log(
   "Універсальний варіант:",
   changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING)
+);
+
+// Не універсальний варіант:
+const REPLACE_FIRST_LETTER = "a";
+
+console.log(
+  "Не універсальний варіант:",
+  STRING_TASK3.replaceAll(REPLACE_FIRST_LETTER, NEW_REPLACE_STRING)
 );
 
 // 4) Створіть функцію, яка приймає рядок і повертає кількість голосних літер у ньому.
@@ -141,7 +141,7 @@ const STRING_TASK5 = "Я       несу гусеня";
 
 /**
  * Функція повертає true, якщо рядок-параметр є паліндромом
- * @param {string} str 
+ * @param {string} str
  * @returns {boolean}
  */
 const checkIsStringPalindrome = (str) => {
