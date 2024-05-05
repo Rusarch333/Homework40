@@ -68,7 +68,7 @@ console.log(
 const STRING_TASK3 = "abcde   abcde abcde   abcde";
 const NEW_REPLACE_STRING = "!";
 
-console.log(STRING_TASK3);
+console.log("Рядок:", STRING_TASK3);
 
 // Універсальний варіант:
 
@@ -128,7 +128,7 @@ const countVowelsAmount = (str) =>
         letter === "я"
     ).length;
 
-console.log(STRING_TASK4);
+console.log("Рядок:", STRING_TASK4);
 console.log("Кількість голосних у слові: ", countVowelsAmount(STRING_TASK4)); // 3
 
 // 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом
