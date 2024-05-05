@@ -68,9 +68,9 @@ console.log(
 const STRING_TASK3 = "abcde   abcde abcde   abcde";
 const NEW_REPLACE_STRING = "!";
 
-console.log("Рядок:", STRING_TASK3);
+console.log(STRING_TASK3, "- оригінальний рядок");
 
-// Універсальний варіант:
+// Варіант №1:
 
 /**
  * Функція, яка приймає рядок і змінює перший символ кожного слова на другий параметр
@@ -85,17 +85,17 @@ const changeFirstWordLettersOnNewString = (str, newStr) =>
     .join(" ");
 
 console.log(
-  "Універсальний варіант:",
-  changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING) // !bcde   !bcde !bcde   !bcde
-);
+  changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING),
+  "- варіант №1"
+); // !bcde   !bcde !bcde   !bcde
 
-// Не універсальний варіант:
-const REPLACE_FIRST_LETTER = "a";
+// Варіант №2:
+const FIRST_LETTER_TO_REPLACE = "a";
 
 console.log(
-  "Не універсальний варіант:",
-  STRING_TASK3.replaceAll(REPLACE_FIRST_LETTER, NEW_REPLACE_STRING) // !bcde   !bcde !bcde   !bcde
-);
+  STRING_TASK3.replaceAll(FIRST_LETTER_TO_REPLACE, NEW_REPLACE_STRING),
+  "- варіант №2"
+); // !bcde   !bcde !bcde   !bcde
 
 // 4) Створіть функцію, яка приймає рядок і повертає кількість голосних літер у ньому.
 
@@ -129,7 +129,7 @@ const countVowelsAmount = (str) =>
     ).length;
 
 console.log("Рядок:", STRING_TASK4);
-console.log("Кількість голосних у слові: ", countVowelsAmount(STRING_TASK4)); // 3
+console.log("Кількість голосних у рядку:", countVowelsAmount(STRING_TASK4)); // 3
 
 // 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом
 
@@ -178,8 +178,8 @@ const getMostLongWord = (str) =>
     .toSorted((word, anotherWord) => anotherWord.length - word.length)
     .at(0);
 
-console.log("Рядок:", STRING_TASK6_1);
+console.log('Рядок: "', STRING_TASK6_1, '"');
 console.log("Найдовше слово:", getMostLongWord(STRING_TASK6_1), "\n"); // знаходитьзнаходить
 
-console.log("Рядок:", STRING_TASK6_2);
+console.log('Рядок: "', STRING_TASK6_2, '"');
 console.log("Найдовше слово:", getMostLongWord(STRING_TASK6_2)); // найдовше
