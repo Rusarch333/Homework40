@@ -72,6 +72,15 @@ console.log(STRING_TASK3, "- оригінальний рядок");
 
 // Варіант №1_______________________________________________________________________________
 
+const FIRST_LETTER_TO_REPLACE = "a";
+
+console.log(
+  STRING_TASK3.replaceAll(FIRST_LETTER_TO_REPLACE, NEW_REPLACE_STRING),
+  "- варіант №1"
+); // !bcde   !bcde !bcde   !bcde
+
+// Варіант №2_______________________________________________________________________________
+
 /**
  * Функція, яка приймає рядок і змінює перший символ кожного слова на другий параметр
  * @param {string} str
@@ -81,20 +90,11 @@ console.log(STRING_TASK3, "- оригінальний рядок");
 const changeFirstWordLettersOnNewString = (str, newStr) =>
   str
     .split(" ")
-    .map((word) => (word !== "" ? newStr + word.slice(1) : word))
+    .map((word) => (word ? newStr + word.slice(1) : word))
     .join(" ");
 
 console.log(
   changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING),
-  "- варіант №1"
-); // !bcde   !bcde !bcde   !bcde
-
-// Варіант №2_______________________________________________________________________________
-
-const FIRST_LETTER_TO_REPLACE = "a";
-
-console.log(
-  STRING_TASK3.replaceAll(FIRST_LETTER_TO_REPLACE, NEW_REPLACE_STRING),
   "- варіант №2"
 ); // !bcde   !bcde !bcde   !bcde
 
