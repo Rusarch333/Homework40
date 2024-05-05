@@ -145,7 +145,7 @@ const STRING_TASK5 = "Я       несу гусеня";
  * @param {string} str
  * @returns {boolean}
  */
-const checkIsStringPalindrome = (str) => {
+const checkIfStringIsPalindrome = (str) => {
   const strLowerCaseWithoutSpaces = str.replaceAll(" ", "").toLowerCase();
 
   return (
@@ -155,7 +155,7 @@ const checkIsStringPalindrome = (str) => {
 };
 
 console.log("Рядок:", STRING_TASK5);
-console.log("Рядок є паліндромом:", checkIsStringPalindrome(STRING_TASK5)); // true
+console.log("Рядок є паліндромом:", checkIfStringIsPalindrome(STRING_TASK5)); // true
 
 // (*) - 6) Створіть функцію, яка знаходить найдовше слово у рядку і повертає його.
 
