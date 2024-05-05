@@ -86,7 +86,7 @@ const changeFirstWordLettersOnNewString = (str, newStr) =>
 
 console.log(
   "Універсальний варіант:",
-  changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING)
+  changeFirstWordLettersOnNewString(STRING_TASK3, NEW_REPLACE_STRING) // !bcde   !bcde !bcde   !bcde
 );
 
 // Не універсальний варіант:
@@ -94,7 +94,7 @@ const REPLACE_FIRST_LETTER = "a";
 
 console.log(
   "Не універсальний варіант:",
-  STRING_TASK3.replaceAll(REPLACE_FIRST_LETTER, NEW_REPLACE_STRING)
+  STRING_TASK3.replaceAll(REPLACE_FIRST_LETTER, NEW_REPLACE_STRING) // !bcde   !bcde !bcde   !bcde
 );
 
 // 4) Створіть функцію, яка приймає рядок і повертає кількість голосних літер у ньому.
@@ -129,7 +129,7 @@ const countVowelsAmount = (str) =>
     ).length;
 
 console.log(STRING_TASK4);
-console.log("Кількість голосних у слові: ", countVowelsAmount(STRING_TASK4));
+console.log("Кількість голосних у слові: ", countVowelsAmount(STRING_TASK4)); // 3
 
 // 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом
 
@@ -154,10 +154,32 @@ const checkIsStringPalindrome = (str) => {
 };
 
 console.log("Рядок:", STRING_TASK5);
-console.log("Рядок є паліндромом:", checkIsStringPalindrome(STRING_TASK5));
+console.log("Рядок є паліндромом:", checkIsStringPalindrome(STRING_TASK5)); // true
 
 // (*) - 6) Створіть функцію, яка знаходить найдовше слово у рядку і повертає його.
 
 console.log(
   "\nЗАВДАННЯ №6 - Створіть функцію, яка знаходить найдовше слово у рядку і повертає його:\n"
 );
+
+const STRING_TASK6_1 =
+  "Створіть функцію,                      яка знаходитьзнаходить найдовше слово у рядку і повертає його";
+const STRING_TASK6_2 =
+  "Я хочу знайти найдовше                    слово у рядку";
+/**
+ * Функція, яка знаходить найдовше слово у рядку і повертає його.
+ * @param {string} str
+ * @returns {string}
+ */
+const getMostLongWord = (str) =>
+  str
+    .split(" ")
+    .filter((word) => word)
+    .toSorted((word, anotherWord) => anotherWord.length - word.length)
+    .at(0);
+
+console.log("Рядок:", STRING_TASK6_1);
+console.log("Найдовше слово:", getMostLongWord(STRING_TASK6_1), "\n"); // знаходитьзнаходить
+
+console.log("Рядок:", STRING_TASK6_2);
+console.log("Найдовше слово:", getMostLongWord(STRING_TASK6_2)); // найдовше
