@@ -104,33 +104,37 @@ console.log(
   "\nЗАВДАННЯ №4 - Створіть функцію, яка приймає рядок і повертає кількість голосних літер у ньому:\n"
 );
 
-const STRING_TASK4 = "Привіт, світ!";
+const STRING_TASK4_UKR = "Привіт, світ!";
+const STRING_TASK4_EN = "What a wounderful world!";
+
+const vowelsArrayUkrainian = ["а", "е", "є", "и", "і", "ї", "о", "у", "ю", "я"];
+const vowelsArrayEnglish = ["a", "e", "i", "o", "u", "y"];
 
 /**
- * Функція, яка приймає рядок і повертає кількість голосних літер у ньому
+ * Функція, яка приймає рядок і масив голосних букв характерних для певної мови
+ * Повертає кількість голосних літер згідно масиву у наданому рядку
  * @param {string} str
+ * @param {string[]} vowelsArray
  * @returns {number}
  */
-const countVowelsAmount = (str) =>
+const countVowelsAmount = (str, vowelsArray) =>
   str
     .toLowerCase()
     .split("")
-    .filter(
-      (letter) =>
-        letter === "а" ||
-        letter === "e" ||
-        letter === "є" ||
-        letter === "и" ||
-        letter === "і" ||
-        letter === "ї" ||
-        letter === "о" ||
-        letter === "у" ||
-        letter === "ю" ||
-        letter === "я"
-    ).length;
+    .filter((letter) => vowelsArray.includes(letter)).length;
 
-console.log("Рядок:", STRING_TASK4);
-console.log("Кількість голосних у рядку:", countVowelsAmount(STRING_TASK4)); // 3
+console.log("Рядок:", STRING_TASK4_UKR);
+console.log(
+  "Кількість голосних у рядку:",
+  countVowelsAmount(STRING_TASK4_UKR, vowelsArrayUkrainian),
+  "\n"
+); // 3
+
+console.log("Рядок:", STRING_TASK4_EN);
+console.log(
+  "Кількість голосних у рядку:",
+  countVowelsAmount(STRING_TASK4_EN, vowelsArrayEnglish)
+); // 7
 
 // 5) Створіть функцію, яка перевіряє, чи є рядок паліндромом
 
